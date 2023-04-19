@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="text-center">
+  <h1 class="h1">Manideep Shanigaram - 24224</h1>
+</div>
+
+<br>
+
+<h3 th:text="${info1}"  class="text-center"></h3>
+
+<br>
+<table  class="table table-striped">
+  <thead>
+  <tr>
+    <th>File Name</th>
+    <th>Line Number</th>
+    <th>Line</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="result, resultStat : ${searchResults}">
+    <td th:text="${result.fileName}"></td>
+    <td th:text="${result.lineNumber}"></td>
+    <td>
+      <span th:id="'line-' + ${resultStat.index}" th:text="${result.line}"></span>
+      <script th:inline="javascript">
+        var line = document.getElementById('line-' + [[${resultStat.index}]]).innerHTML;
+        var searchWord = [[${searchWord}]];
+        var highlighted = line.replace(new RegExp(searchWord, 'gi'), '<span class="highlight">$&</span>');
+        document.getElementById('line-' + [[${resultStat.index}]]).innerHTML = highlighted;
+      </script>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<br>
+<hr>
+<br>
+
+<h3>Additional Information:</h3>
+<table  class="table table-striped">
+  <tr>
+    <td><span > Max Occurred word in all Files </span></td>
+    <td><span th:text="${maxWord}"></span></td>
+    <td><span th:text="${maxCount}"></span></td>
+  </tr>
+  <tr>
+    <td><span > Min Occurred word in all Files </span></td>
+    <td><span th:text="${minWord}"></span></td>
+    <td><span th:text="${minCount}"></span></td>
+  </tr>
+
+</table>
+
+
+</body>
+</html>

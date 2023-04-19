@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<div class="text-center">
+    <h1 class="h1">Manideep Shanigaram - 24224</h1>
+</div>
+
+<br>
+<hr>
+<br>
+
+<h2 th:text ="${wordCount}" ></h2>
+<h2 th:text ="${charCount}" ></h2>
+<h2 th:text="${spaceCount}"></h2>
+
+<br>
+<hr>
+<br>
+
+<h3 th:text = "${wordOccurrenceCount}"></h3>
+
+<br>
+<hr>
+<br>
+
+<h1>Character Count Map</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Character</th>
+        <th>Count</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${charCountMap}">
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</br>
+<hr>
+</br>
+
+<h1>Top Occurred Words</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Word</th>
+        <th>Count</th>
+        <th>Fraction</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${topNOccurrenceMap}">
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value}"></td>
+        <td>
+            <span th:text="${entry.value}"></span>/<span th:text="${wc}"></span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+<hr>
+<br>
+
+<h1>Bottom Occurred Words</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Word</th>
+        <th>Count</th>
+        <th>Fraction</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${bottomNOccurrenceMap}">
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value}"></td>
+        <td>
+            <span th:text="${entry.value}"></span>/<span th:text="${wc}"></span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h3 th:text="${firstNChar}"></h3>
+
+<br>
+
+<h1>Word Count Map</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Word</th>
+        <th>Count</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${multipleWordsCount}">
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value}"></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+
+<h1>Word Count Map</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Word</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${minMax}">
+        <td th:text="${entry}"></td>
+
+    </tr>
+    </tbody>
+</table>
+<br>
+<br>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Word</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${word1Word2}">
+        <td th:text="${entry}"></td>
+
+    </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+
+</body>
+</html>

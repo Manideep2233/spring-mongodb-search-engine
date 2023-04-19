@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Findings</title>
+  <style>
+.highlight {
+    color: red;
+}
+  </style>
+</head>
+<body>
+<div class="text-center">
+  <h1 class="h1">Teja Durga Sai Manikanta Arasavalli - 37960</h1>
+</div>
+
+<br>
+
+<h3 th:text="${info1}" ></h3>
+<h1 th:text = "${files}"></h1>
+
+<br>
+<table>
+  <thead>
+  <tr>
+    <th>File Name</th>
+    <th>Line Number</th>
+    <th>Line</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="result, resultStat : ${searchResults}">
+
+    <td th:text="${result.fileName}"></td>
+    <td th:text="${result.lineNumber}" style="text-align: center;"></td>
+    <td>
+      <span th:id="'line-' + ${resultStat.index}" th:text="${result.line}"></span>
+      <script th:inline="javascript">
+        var line = document
+        .getElementById('line-' + [[${resultStat.index}]]).innerHTML;
+        var searchWord = [[${searchWord}]];
+        var highlighted = line.replace(new RegExp(searchWord, 'gi'), '<span class="highlight">$&</span>');
+        document.getElementById('line-' + [[${resultStat.index}]]).innerHTML = highlighted;
+      </script>
+    </td>
+
+
+  </tr>
+  </tbody>
+</table>
+<br>
+<!--<p>Files :</p>-->
+<!--<p th:text = "${rpath}"></p>-->
+<!--<ul>-->
+<!--  <li th:each="filename : ${filenames}" th:text="${filename}"></li>-->
+<!--</ul>-->
+
+
+</body>
+</html>

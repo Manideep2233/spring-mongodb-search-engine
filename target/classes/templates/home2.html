@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment-5</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZEENikpdO6K/KgB2Q0M4o"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="text-center">
+  <h1 class="h1">Manideep Shanigaram - 24224</h1>
+</div>
+<form action="#" th:action="@{/q5/searchOne}" method="post">
+  <label for="textInput">T (at least 1400 characters):</label><br>
+  <textarea id="textInput" name="textInput" th:text="${textInput}"></textarea><br>
+  <label for="searchInput">S (at least 60 characters):</label><br>
+  <input type="text" id="searchInput" name="searchInput"><br>
+  <label for="result">R:</label><br>
+  <textarea id="result" th:text="${result}"></textarea><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+
+
+</body>
+</html>

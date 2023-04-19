@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment-5</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZEENikpdO6K/KgB2Q0M4o"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="text-center">
+  <h1 class="h1">Manideep Shanigaram - 24224</h1>
+</div>
+<br>
+<hr>
+<br>
+<h1>Search Form</h1>
+<form action="#" th:action="@{/a5/search}" method="post">
+  <label for="word">Search Word:</label>
+  <input type="text" id="word" name="word" required>
+  <button type="submit">Search</button>
+</form>
+</br>
+<hr>
+</br>
+<h1>You can enter data in text Area and do Operations:</h1>
+<form action="#" th:action="@{/a5/searchData}" method="post">
+  <label for="fileData">Enter Data:</label>
+  <textarea id="fileData" name="fileData" maxlength="1500" required></textarea>
+  </br>
+  </br>
+  <h4>Filters:</h4>
+  <label for="fileSearchChar">Enter Word to Search:</label>
+  <input type="text" id="fileSearchChar" name="fileSearchChar" >
+  </br>
+  </br>
+  <label for="eachCharOccurrence">Enter Word/Char to see Occurrence of each Char :</label>
+  <input type="text" id="eachCharOccurrence" name="eachCharOccurrence" >
+  </br>
+  </br>
+  <label for="topNWords">Enter N to see top N Occurrence words in data :</label>
+  <input type="number" id="topNWords" name="topNWords" >
+  </br>
+  </br>
+  <label for="leastNWords">Enter N to see bottom N Occurrence words in data :</label>
+  <input type="number" id="leastNWords" name="leastNWords" >
+  </br>
+  </br>
+  <label for="firstNChars">Enter N to see bottom N Occurrence words in data :</label>
+  <input type="number" id="firstNChars" name="firstNChars" >
+  </br>
+  </br>
+  <label for="multipleWords">Enter N to see bottom N Occurrence words in data :</label>
+  <input type="text" id="multipleWords" name="multipleWords" >
+  </br>
+  </br>
+  <label for="min">Word Length Min and Max: </label>
+  <input type="number" id="min" name="min" >
+  <input type="number" id="max" name="max" >
+  </br>
+  </br>
+  <label for="word1">Word Length Min and Max: </label>
+  <input type="text" id="word1" name="word1" >
+  <input type="text" id="word2" name="word2" >
+
+  <button type="submit">Search</button>
+</form>
+</body>
+</html>
