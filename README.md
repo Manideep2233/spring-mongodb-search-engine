@@ -22,12 +22,7 @@ This project is a search engine developed using Spring MVC, Thymeleaf, and Mongo
 2. Ensure that MongoDB is installed and running on your system.
 3. Import the project into your preferred IDE.
 4. Run the application to populate MongoDB with data and start the server.
-5. Access the search engine interface through a web browser.
-
-**Usage:**
-1. Enter a word or phrase into the search bar to find occurrences within the dataset.
-2. View the character count for a specific word or phrase.
-3. Explore the top/bottom N most occurring words in the dataset.
+5. Access the search engine interface through a web browser.(http://localhost:8080/a5/search)
 
 **Changes to make in Code for running it:**
 https://www.mongodb.com/products/platform/cloud
@@ -36,6 +31,12 @@ go to the above url and signup and host your MongoDB and update it in spring app
 ```
 spring.data.mongodb.uri=mongodb+srv://root:root@cluster0.crkygpz.mongodb.net/test
 ```
+
+**Usage:**
+1. Enter a word or phrase into the search bar to find occurrences within the dataset.
+2. View the character count for a specific word or phrase.
+3. Explore the top/bottom N most occurring words in the dataset.
+
 
 **Repository Title:**
 spring-mongodb-search-engine
